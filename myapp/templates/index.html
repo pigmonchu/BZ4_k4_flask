@@ -1,15 +1,38 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MyApp: Indice</title>
-</head>
-<body>
-    <nav>
-        <a href="./detail">Detalle</a>
-    </nav>
-    <h1>Página principal</h1>
-    <p>Hola, mundo</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title%} Indice {% endblock %}
+
+{% block content %}
+    <table class="region_table">
+        <tr>
+            <th>Región</th>
+            <th>Total Ventas</th>
+            <th>Total Beneficio</th>
+        </tr>
+        <tr>
+            <td>Asia</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Australia and Oceania</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Central America and the Caribbean</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Europe</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Middle East and North Africa</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+    </table>
+{% endblock %}

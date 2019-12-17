@@ -1,16 +1,8 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MyApp: Detalle</title>
-</head>
-<body>
-    <nav>
-        <a href="./">Home</a>
-    </nav>
+{% extends 'base.html' %}
 
+{% block title%} Detalle {% endblock %}
+
+{% block content %}
     <h1>Página de detalle</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus elit quis enim vulputate, quis molestie lectus bibendum. Nulla aliquam mi dolor, id imperdiet nunc consequat eget. Donec bibendum mollis felis. Fusce laoreet vehicula massa non tincidunt. Mauris et augue sit amet magna laoreet elementum nec ut libero. Suspendisse rutrum nunc ex. Sed lacus urna, suscipit eu lorem id, dictum sollicitudin mauris. </p>
-</body>
-</html>
+{% endblock %}

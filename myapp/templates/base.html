@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyApp: {% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header, footer {
+            background-color: powderblue;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 10px;
+        }
+
+        .region_table{
+            width: 80%;
+            margin: 12px auto;
+        }
+
+        nav {
+            margin: 12px 0;
+        }
+
+        .region_table td, .region_table th {
+            padding: 10px;
+            border-bottom: 1px solid lightgray
+        }
+
+        .region_table th {
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Ventas Internacionales del mundo mundial
+    </header>
+    <nav><a href="./">Inicio</a> | <a href="./detail">Detalle</a></nav>
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+    <footer>
+        &copy; 2019 - Todos los derechos reservados
+    </footer>
+
+</body>
+</html>
