@@ -9,30 +9,14 @@
             <th>Total Ventas</th>
             <th>Total Beneficio</th>
         </tr>
+        {% for registro in registros %}
         <tr>
-            <td>Asia</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
+            {% for campo in registro %}
+            <td>{{campo.region}}</td>
+            <td>{{campo.ingresos_totales}}</td>
+            <td>{{campo.beneficios_totales}}</td>
+            {% endfor %}
         </tr>
-        <tr>
-            <td>Australia and Oceania</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
-        <tr>
-            <td>Central America and the Caribbean</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
-        <tr>
-            <td>Europe</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
-        <tr>
-            <td>Middle East and North Africa</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
+        {% endfor %}
     </table>
 {% endblock %}
