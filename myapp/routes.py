@@ -40,8 +40,8 @@ def index():
         else:
             datos[linea['region']] = {'ingresos_totales': float(linea['ingresos_totales']), 'beneficios_totales': float(linea['beneficio'])}
     '''
-    {'region': 'Australia and Oceania', 'ingresos_totales': 3292856.72, 'beneficios_totales': 1236498.14}
-    {'region': ...}
+    Finalmente devolvemos una lista de tuplas con la estructura
+    [('Region', {'ingresos_totales': valor, 'beneficios_totales': valor}),...]
     '''
     resultado = []
     for clave in datos:
@@ -51,7 +51,6 @@ def index():
     '''
     enviarlo a index.html
     '''
-
     return render_template('index.html', registros=resultado)
 
 @app.route("/detail")
