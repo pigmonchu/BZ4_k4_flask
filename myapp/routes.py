@@ -2,17 +2,21 @@ from myapp import app
 from flask import render_template
 import csv
 
+
+
 @app.route("/")
 def index():
     '''
     leer el fichero sales10.csv y transformarlo en un diccionario
     '''
-    fSales = open('../data/sales10.csv','r')
+    
+    fSales = open('./data/sales10.csv','r')
 
     csvreader = csv.reader(fSales, delimiter=',')
     registros = []
     for linea in csvreader:
         registros.append(linea)
+        print(linea)
 
     cabecera = registros[0]
 
@@ -27,11 +31,22 @@ def index():
     '''
     procesarlo para obtener los totales
     '''
-    resultado = [] #lista de diccionarios
+    datos = {}
+    for linea in ventas:
+        if linea['region'] in datos:
+            regAct = datos[linea['region']]
+            regAct['ingresos_totales'] += float(linea['ingresos_totales'])
+            regAct['beneficios_totales'] += float(linea['beneficio'])
+        else:
+            datos[linea['region']] = {'ingresos_totales': float(linea['ingresos_totales']), 'beneficios_totales': float(linea['beneficio'])}
     '''
     {'region': 'Australia and Oceania', 'ingresos_totales': 3292856.72, 'beneficios_totales': 1236498.14}
     {'region': ...}
     '''
+    resultado = []
+    for clave in datos:
+        resultado.append((clave, datos[clave]))
+
 
     '''
     enviarlo a index.html

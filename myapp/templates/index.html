@@ -9,13 +9,11 @@
             <th>Total Ventas</th>
             <th>Total Beneficio</th>
         </tr>
-        {% for registro in registros %}
+        {% for key, data in registros %}
         <tr>
-            {% for campo in registro %}
-            <td>{{campo.region}}</td>
-            <td>{{campo.ingresos_totales}}</td>
-            <td>{{campo.beneficios_totales}}</td>
-            {% endfor %}
+            <td>{{key}}</td>
+            <td>{{"%.2f €" | format(data.ingresos_totales)}}</td>
+            <td>{{"%.2f €" | format(data.beneficios_totales)}}</td>
         </tr>
         {% endfor %}
     </table>
