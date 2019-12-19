@@ -3,6 +3,25 @@
 {% block title%} Detalle {% endblock %}
 
 {% block content %}
-    <h1>Página de detalle</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus elit quis enim vulputate, quis molestie lectus bibendum. Nulla aliquam mi dolor, id imperdiet nunc consequat eget. Donec bibendum mollis felis. Fusce laoreet vehicula massa non tincidunt. Mauris et augue sit amet magna laoreet elementum nec ut libero. Suspendisse rutrum nunc ex. Sed lacus urna, suscipit eu lorem id, dictum sollicitudin mauris. </p>
+    <h1>Resumen de {{region}}</h1>
+
+{% if registros | length == 0 %}
+    <p>No hay datos</p>
+{% else %}
+    <table class="country_table">
+        <tr>
+            <th>Pais</th>
+            <th>Total Ventas</th>
+            <th>Total Beneficio</th>
+        </tr>
+        {% for key, data in registros.items() %}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{"%.2f €" | format(data.ingresos_totales)}}</td>
+            <td>{{"%.2f €" | format(data.beneficios_totales)}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
 {% endblock %}
